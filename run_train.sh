@@ -1,0 +1,35 @@
+export CUDA_VISIBLE_DEVICES=5
+pretrain_step=60000
+python ./berson_bart/run_glue.py \
+    --model_type facebook/bart-large \
+    --model_name_or_path ./output_pretrain/checkpoint-${pretrain_step}step\
+    --teacher_name_or_path facebook/bart_large \
+    --do_train \
+    --do_lower_case \
+    --data_dir ./Wikihow_video_data \
+    --fea_data_dir ./processed_fea \
+    --task_name aan \
+    --per_gpu_eval_batch_size=1   \
+    --per_gpu_train_batch_size=4   \
+    --gradient_accumulation_steps 1 \
+    --learning_rate 5e-6 \
+    --eval_all_checkpoints \
+    --evaluate_during_training \
+    --num_train_epochs 10.0 \
+    --logging_steps 30000 \
+    --save_steps 0 \
+    --cuda_ip cuda:0 \
+    --overwrite_output_dir \
+    --ff_size 3072 \
+    --heads 8 \
+    --para_dropout 0.1 \
+    --inter_layers 2 \
+    --dec_heads 8 \
+    --decoder_layer 2 \
+    --beam_size 16 \
+    --pairwise_loss_lam 0.4 \
+    --output_dir pt-${pretrain_step}/recipe/ \
+    --max_seq_length 1024 \
+    --lr_bart 1e-5 \
+    --lr_contrast_cross 5e-5 \
+    --lr_ordering 1e-5
