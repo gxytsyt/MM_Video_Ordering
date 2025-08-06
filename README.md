@@ -15,7 +15,8 @@
 
 ## 2. Data Download
 
-1. The text data and related video links are in `./Wikihow_video_data/pure_video_data.json`.
+0. download the text data and related video links from https://drive.google.com/file/d/1BsOQR4jvjbYD-GxVj7GwKCmlLr8uqFyx/view?usp=drive_link
+1. And save the downloaded json file into `./Wikihow_video_data`.
 2. The packaged video data will be made publicly available upon acceptance.
 3. Save the dataset to `./Wikihow_video_data`.
 4. Use `preprocess_video/feature_from_video.py` to extract video features from the data.
