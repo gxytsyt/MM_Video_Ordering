@@ -18,8 +18,7 @@
 1. Download the text descriptions and corresponding video links from https://drive.google.com/file/d/1BsOQR4jvjbYD-GxVj7GwKCmlLr8uqFyx/view?usp=drive_link
 2. Save the downloaded JSON file into `./Wikihow_video_data`.
 3. Download the raw videos using ./download/download_videos.py. (The raw video data will be made publicly available upon acceptance.)
-4. Save the downloaded video data to `./Wikihow_video_data`.
-5. Use `preprocess_video/feature_from_video.py` to extract video features from the data. This step converts raw video data into a format that can be used for model training.
+4. Use `preprocess_video/feature_from_video.py` to extract video features from the data. This step converts raw video data into a format that can be used for model training.
 
 ## 3. Finetune
 
