@@ -18,12 +18,12 @@
 
 1. Download the text descriptions and corresponding video links from https://drive.google.com/file/d/1BsOQR4jvjbYD-GxVj7GwKCmlLr8uqFyx/view?usp=drive_link
 2. Save the downloaded JSON file into `./Wikihow_video_data`.
-3. Download the raw videos using ./download/download_videos.py. (The raw video data will be made publicly available upon acceptance.)
+3. Download the raw videos using ./download/download_videos.py.
 4. Use `preprocess_video/feature_from_video.py` to extract video features from the data. This step converts raw video data into a format that can be used for model training.
 
 ## 3. Finetune
 
-1. Modify the following paths in the `run_berson_bart.sh` script:
+1. Modify the following paths in the `run_train.sh` script:
 
    * `--data_dir`: Path to the processed video dataset.
    * `--model_name_or_path`: Path to the pretrained model. Set as `facebook/bart_large` for fine-tuning only.
